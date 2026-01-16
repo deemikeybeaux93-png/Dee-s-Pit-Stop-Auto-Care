@@ -1,0 +1,1271 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Dee’s Pit Stop Auto Care | Copperas Cove, TX</title>
+  <meta name="description" content="Dee’s Pit Stop Auto Care in Copperas Cove, TX: quick-service auto care including oil changes, brakes, batteries, and check engine diagnostics. Fast fixes. Fair prices. Done right." />
+  <meta name="theme-color" content="#111827" />
+
+  <style>
+    :root{
+      --bg:#070b14;
+      --text:#e5e7eb;
+      --muted:#aab3c5;
+      --accent:#f59e0b;
+      --accent2:#22c55e;
+      --warn:#f97316;
+      --bad:#ef4444;
+      --border:rgba(255,255,255,.10);
+      --shadow: 0 14px 40px rgba(0,0,0,.50);
+      --radius:18px;
+      --max:1120px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      color:var(--text);
+      background:
+        radial-gradient(1200px 700px at 15% -5%, rgba(245,158,11,.22), transparent 55%),
+        radial-gradient(900px 600px at 95% 0%, rgba(34,197,94,.12), transparent 55%),
+        radial-gradient(800px 500px at 70% 40%, rgba(59,130,246,.08), transparent 60%),
+        var(--bg);
+      line-height:1.5;
+    }
+    a{color:inherit;text-decoration:none}
+    .container{max-width:var(--max);margin:0 auto;padding:0 18px}
+    .thin{max-width:860px}
+    .muted{color:var(--muted)}
+    .hide{display:none !important}
+
+    /* Top bar */
+    .topbar{
+      position:sticky;top:0;z-index:20;
+      backdrop-filter: blur(10px);
+      background: rgba(7,11,20,.72);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav{
+      display:flex;align-items:center;justify-content:space-between;
+      padding:14px 0;gap:12px;
+    }
+    .brand{
+      display:flex;align-items:center;gap:12px;
+      font-weight:900; letter-spacing:.2px;
+      min-width: 220px;
+    }
+    .brand small{display:block;color:var(--muted);font-weight:700}
+    .links{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+    .links a{
+      color:var(--muted);
+      font-weight:750;font-size:14px;
+      padding:8px 10px;border-radius:999px;
+    }
+    .links a:hover{color:var(--text);background:rgba(255,255,255,.06)}
+    .rightBtns{display:flex;gap:10px;flex-wrap:wrap}
+
+    /* Real logo style */
+    .logo{
+      width:44px;height:44px;border-radius:14px;
+      display:grid;place-items:center;
+      box-shadow: var(--shadow);
+      border:1px solid rgba(245,158,11,.40);
+      background: linear-gradient(135deg, rgba(245,158,11,.95), rgba(245,158,11,.22));
+      color:#111827; /* SVG uses currentColor */
+      flex:0 0 auto;
+    }
+
+    /* Buttons */
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:10px;
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.06);
+      color:var(--text);
+      padding:10px 14px;border-radius:999px;
+      font-weight:850;font-size:14px;
+      cursor:pointer;
+      transition:transform .08s ease, background .2s ease, border-color .2s ease, filter .2s ease;
+      user-select:none;
+      white-space:nowrap;
+    }
+    .btn:hover{background: rgba(255,255,255,.10);border-color:rgba(255,255,255,.18)}
+    .btn:active{transform: translateY(1px)}
+    .btn.primary{
+      background: linear-gradient(135deg, var(--accent), rgba(245,158,11,.72));
+      border-color: rgba(245,158,11,.55);
+      color:#111827;
+    }
+    .btn.primary:hover{filter:brightness(1.05)}
+    .btn.green{
+      background: linear-gradient(135deg, var(--accent2), rgba(34,197,94,.65));
+      border-color: rgba(34,197,94,.55);
+      color:#06210f;
+    }
+    .btn.ghost{
+      background: transparent;
+      border-color: rgba(255,255,255,.16);
+    }
+    .btn.icon{
+      padding:10px 12px;
+      width:44px;
+    }
+    .btn.disabled, button:disabled, input:disabled, select:disabled, textarea:disabled{
+      opacity:.55;
+      cursor:not-allowed;
+    }
+
+    /* Hero */
+    header.hero{padding:34px 0 20px}
+    .heroWrap{
+      border:1px solid var(--border);
+      border-radius: 26px;
+      overflow:hidden;
+      box-shadow: var(--shadow);
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02)),
+        radial-gradient(900px 500px at 15% 20%, rgba(245,158,11,.22), transparent 55%),
+        radial-gradient(900px 500px at 95% 10%, rgba(34,197,94,.12), transparent 55%),
+        rgba(255,255,255,.03);
+      position:relative;
+    }
+    .heroGrid{
+      display:grid;
+      grid-template-columns: 1.25fr .75fr;
+      gap:0;
+    }
+    .heroLeft{padding:28px}
+    .heroRight{
+      padding:22px;
+      border-left:1px solid var(--border);
+      background: linear-gradient(180deg, rgba(0,0,0,.10), rgba(0,0,0,.22));
+      display:grid;
+      gap:12px;
+    }
+    .checkers{
+      position:absolute; inset:0 auto auto 0;
+      width:220px; height:220px;
+      transform: translate(-70px,-70px) rotate(18deg);
+      opacity:.18;
+      background:
+        linear-gradient(45deg, rgba(255,255,255,.0) 0 25%, rgba(255,255,255,.55) 25% 50%, rgba(255,255,255,.0) 50% 75%, rgba(255,255,255,.55) 75% 100%);
+      background-size: 26px 26px;
+      filter: blur(.2px);
+    }
+    h1{margin:0 0 10px;font-size:42px;line-height:1.05}
+    .sub{margin:0;color:var(--muted);font-size:16px}
+    .ctaRow{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+    .pillRow{display:flex;gap:10px;flex-wrap:wrap;margin:16px 0 0}
+    .pill{
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.05);
+      padding:8px 10px;border-radius:999px;
+      font-size:13px;color:var(--muted);
+      font-weight:750;
+    }
+    .badgeRow{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+    .badge{
+      border:1px dashed rgba(245,158,11,.55);
+      color:rgba(245,158,11,.95);
+      padding:8px 10px;border-radius:999px;
+      font-weight:900;font-size:12px;
+      background: rgba(0,0,0,.15);
+    }
+
+    /* Tach */
+    .tach{
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.04);
+      border-radius: 18px;
+      padding:14px;
+    }
+    .tachTop{display:flex;justify-content:space-between;align-items:center;gap:10px}
+    .tachTitle{font-weight:1000}
+    .rpm{
+      font-weight:1000;
+      padding:6px 10px;
+      border-radius: 999px;
+      background: rgba(0,0,0,.22);
+      border:1px solid rgba(255,255,255,.12);
+      color: var(--muted);
+      font-size: 12px;
+      white-space:nowrap;
+    }
+    .gaugeWrap{display:grid;place-items:center;padding:10px 0 2px}
+    .needle{
+      transform-origin: 120px 120px;
+      transform: rotate(-120deg);
+      transition: transform .35s ease;
+      filter: drop-shadow(0 6px 8px rgba(0,0,0,.35));
+    }
+    .tachLegend{
+      display:flex;justify-content:space-between;gap:10px;
+      margin-top:6px;
+      color: var(--muted);
+      font-weight: 900;
+      font-size: 12px;
+    }
+
+    /* Sections */
+    section{padding:18px 0}
+    .sectionTitle{display:flex;align-items:end;justify-content:space-between;gap:12px;margin:10px 0 12px}
+    .sectionTitle h2{margin:0;font-size:24px}
+    .sectionTitle p{margin:0;color:var(--muted)}
+    .grid3{display:grid;grid-template-columns: repeat(3, 1fr);gap:14px}
+    .card{
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.05);
+      border-radius: var(--radius);
+      padding:18px;
+      box-shadow: var(--shadow);
+    }
+    .card h3{margin:0 0 8px;font-size:18px}
+
+    /* Estimator */
+    .estWrap{
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.04);
+      border-radius: 22px;
+      box-shadow: var(--shadow);
+      padding:16px;
+    }
+    .estGrid{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:14px;
+      align-items:start;
+    }
+    label{display:block;font-weight:1000;margin:10px 0 6px}
+    select, input[type="checkbox"], input[type="radio"]{accent-color: var(--accent)}
+    select, input, textarea{
+      width:100%;
+      padding:12px 12px;
+      border-radius: 12px;
+      border:1px solid var(--border);
+      background: rgba(0,0,0,.25);
+      color: var(--text);
+      outline:none;
+      font-weight:800;
+    }
+    textarea{min-height:110px;resize:vertical}
+    .row2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    .checks{display:grid;gap:10px;margin-top:8px}
+    .checkLine{display:flex;gap:10px;align-items:flex-start;color:var(--muted);font-weight:800}
+    .radioRow{display:flex;gap:10px;flex-wrap:wrap}
+    .radioPill{
+      display:flex;gap:8px;align-items:center;
+      padding:10px 12px;
+      border-radius: 999px;
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.04);
+      font-weight:900;
+      color: var(--muted);
+      cursor:pointer;
+      user-select:none;
+    }
+    .radioPill input{width:auto;margin:0}
+    .estResult{
+      border:1px solid rgba(245,158,11,.35);
+      background: rgba(245,158,11,.08);
+      border-radius: 18px;
+      padding:14px;
+    }
+    .estBig{font-size:24px;font-weight:1100;letter-spacing:.2px;margin:6px 0 6px}
+    .estSmall{color:var(--muted);font-weight:850;font-size:13px;margin:0}
+    .estBtns{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+    .alert{
+      border-radius: 16px;
+      padding: 12px;
+      border: 1px solid rgba(239,68,68,.40);
+      background: rgba(239,68,68,.10);
+      color: rgba(255,255,255,.92);
+      font-weight: 900;
+    }
+
+    /* Tracker */
+    .trackerWrap{
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.04);
+      border-radius: 22px;
+      box-shadow: var(--shadow);
+      padding:16px;
+    }
+    .trackerGrid{display:grid;grid-template-columns: 1fr 1fr;gap:14px;align-items:start}
+    .steps{
+      display:flex;gap:10px;align-items:center;flex-wrap:wrap;
+      margin-top: 12px;
+    }
+    .step{
+      flex:1 1 150px;
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(0,0,0,.18);
+      border-radius: 16px;
+      padding:12px;
+      box-shadow: var(--shadow);
+      min-width: 150px;
+    }
+    .stepTop{display:flex;justify-content:space-between;gap:10px;align-items:center}
+    .dot{
+      width:10px;height:10px;border-radius:999px;
+      background: rgba(255,255,255,.20);
+      border:1px solid rgba(255,255,255,.18);
+    }
+    .step.active{border-color: rgba(34,197,94,.45); background: rgba(34,197,94,.10)}
+    .step.active .dot{background: rgba(34,197,94,.95)}
+    .step h4{margin:0;font-size:14px}
+    .step p{margin:6px 0 0;color:var(--muted);font-weight:850;font-size:12.5px}
+
+    /* FAQ */
+    .faqItem{
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.05);
+      border-radius: 16px;
+      padding:14px 14px;
+      box-shadow: var(--shadow);
+      cursor:pointer;
+    }
+    .faqQ{display:flex;justify-content:space-between;align-items:center;gap:10px;font-weight:1100}
+    .faqA{max-height:0;overflow:hidden;transition:max-height .25s ease;margin-top:0;color:var(--muted);font-weight:850}
+    .faqItem.open .faqA{max-height:220px;margin-top:10px}
+    .chev{transition:transform .2s ease}
+    .faqItem.open .chev{transform: rotate(180deg)}
+
+    /* Sticky bottom bar */
+    .stickyBar{
+      position:fixed;left:0;right:0;bottom:0;
+      background: rgba(7,11,20,.86);
+      border-top: 1px solid var(--border);
+      backdrop-filter: blur(10px);
+      padding:10px 12px;
+      z-index: 40;
+      display:none;
+    }
+    .stickyInner{display:flex;gap:10px;justify-content:center;align-items:center}
+    .stickyInner .btn{flex:1;max-width: 260px}
+    .spacerBottom{height: 74px; display:none}
+
+    .footer{
+      padding:26px 0 40px;
+      color:var(--muted);
+      border-top:1px solid var(--border);
+      margin-top:18px;
+      font-size:13px;
+    }
+
+    @media (max-width: 980px){
+      .heroGrid{grid-template-columns:1fr}
+      .heroRight{border-left:0;border-top:1px solid var(--border)}
+      .grid3{grid-template-columns:1fr}
+      .trackerGrid{grid-template-columns:1fr}
+      .estGrid{grid-template-columns:1fr}
+      .row2{grid-template-columns:1fr}
+      h1{font-size:34px}
+      .links{display:none}
+      .stickyBar{display:block}
+      .spacerBottom{display:block}
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "AutoRepair",
+    "name": "Dee’s Pit Stop Auto Care",
+    "description": "Quick-service auto care: oil changes, brakes, batteries, and check engine diagnostics.",
+    "areaServed": "Copperas Cove, TX",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Copperas Cove",
+      "addressRegion": "TX",
+      "addressCountry": "US"
+    },
+    "telephone": "+1-480-669-5555",
+    "email": "deemikeybeaux93@gmail.com",
+    "url": "https://deespitstop.com"
+  }
+  </script>
+</head>
+
+<body>
+  <div class="topbar">
+    <div class="container">
+      <div class="nav">
+        <a class="brand" href="#top">
+          <div class="logo" aria-label="Dee’s Pit Stop Auto Care logo">
+            <svg viewBox="0 0 64 64" width="26" height="26" role="img" aria-hidden="true">
+              <path d="M32 4c14.36 0 26 11.64 26 26S46.36 56 32 56 6 44.36 6 30 17.64 4 32 4Z"
+                    fill="none" stroke="currentColor" stroke-width="4" opacity=".95"/>
+              <path d="M32 12c9.94 0 18 8.06 18 18s-8.06 18-18 18-18-8.06-18-18 8.06-18 18-18Z"
+                    fill="none" stroke="currentColor" stroke-width="2" opacity=".55"/>
+              <path d="M41.5 18.5c-2.2 2.2-5.2 2.9-7.9 2.2l-9.4 9.4 2.2 2.2 9.4-9.4c-.7-2.7 0-5.7 2.2-7.9l3.5 3.5Z"
+                    fill="currentColor" opacity=".95"/>
+              <path d="M27 44l4.8-9.2h-5.1L37 20l-4.8 9.2h5.1L27 44Z"
+                    fill="currentColor" opacity=".55"/>
+            </svg>
+          </div>
+          <div>
+            Dee’s Pit Stop Auto Care
+            <small>Copperas Cove, TX • Veteran-Owned</small>
+          </div>
+        </a>
+
+        <div class="links">
+          <a href="#estimator">Estimator</a>
+          <a href="#tracker">Tracker</a>
+          <a href="#faq">FAQ</a>
+          <a href="#contact">Contact</a>
+        </div>
+
+        <div class="rightBtns">
+          <a class="btn ghost" id="btnDirections" href="#" target="_blank" rel="noopener">Service Area Map</a>
+          <a class="btn primary" href="tel:+14806695555">Call/Text</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="top"></div>
+
+  <header class="hero">
+    <div class="container">
+      <div class="heroWrap">
+        <div class="checkers"></div>
+
+        <div class="heroGrid">
+          <div class="heroLeft">
+            <h1>Fast fixes. Fair prices. <span style="color:var(--accent)">Done right.</span></h1>
+            <p class="sub">
+              Quick-service auto care in Copperas Cove: oil changes, brakes, batteries, and check engine diagnostics.
+              Straight talk, clean work, no runaround.
+            </p>
+
+            <div class="ctaRow">
+              <a class="btn primary" href="#contact">Request a Quote</a>
+              <a class="btn green" href="#estimator">Try the Estimator</a>
+              <a class="btn" href="#tracker">Track My Car</a>
+            </div>
+
+            <div class="pillRow">
+              <div class="pill">Mon–Fri: 8AM–4PM</div>
+              <div class="pill">Upfront estimates</div>
+              <div class="pill">12 mo / 12k mi warranty*</div>
+              <div class="pill">Diagnostics that don’t waste your time</div>
+            </div>
+
+            <div class="badgeRow">
+              <div class="badge">Veteran-Owned</div>
+              <div class="badge">Quick-Service Focus</div>
+              <div class="badge">Clear Estimates</div>
+            </div>
+
+            <p class="muted" style="margin:12px 0 0;font-size:13px;font-weight:850">
+              *Warranty applies to shop-supplied parts & labor. Customer-supplied parts: no warranty.
+            </p>
+          </div>
+
+          <div class="heroRight">
+            <div class="tach">
+              <div class="tachTop">
+                <div class="tachTitle">Live Tach</div>
+                <div class="rpm" id="rpmText">RPM: 900</div>
+              </div>
+
+              <div class="gaugeWrap">
+                <svg width="240" height="170" viewBox="0 0 240 170" aria-label="tachometer">
+                  <path d="M30 140 A90 90 0 0 1 210 140" fill="none" stroke="rgba(255,255,255,.12)" stroke-width="14" stroke-linecap="round"/>
+                  <path d="M30 140 A90 90 0 0 1 210 140" fill="none" stroke="rgba(245,158,11,.35)" stroke-width="10" stroke-linecap="round"/>
+                  <g stroke="rgba(255,255,255,.20)" stroke-width="2" stroke-linecap="round">
+                    <line x1="45" y1="135" x2="52" y2="129"/>
+                    <line x1="65" y1="115" x2="72" y2="110"/>
+                    <line x1="90" y1="100" x2="95" y2="92"/>
+                    <line x1="120" y1="94"  x2="120" y2="85"/>
+                    <line x1="150" y1="100" x2="145" y2="92"/>
+                    <line x1="175" y1="115" x2="168" y2="110"/>
+                    <line x1="195" y1="135" x2="188" y2="129"/>
+                  </g>
+                  <g class="needle" id="needle">
+                    <line x1="120" y1="120" x2="120" y2="48" stroke="rgba(245,158,11,.95)" stroke-width="5" stroke-linecap="round"/>
+                    <circle cx="120" cy="120" r="10" fill="rgba(0,0,0,.35)" stroke="rgba(255,255,255,.18)"/>
+                  </g>
+                  <text x="120" y="156" text-anchor="middle" fill="rgba(255,255,255,.55)" font-size="12" font-weight="900">x1000 RPM</text>
+                </svg>
+              </div>
+
+              <div class="tachLegend"><span>0</span><span>2</span><span>4</span><span>6</span><span>8</span></div>
+
+              <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:12px">
+                <button class="btn" id="btnRev" type="button">Rev It</button>
+                <a class="btn primary" href="tel:+14806695555">Call/Text</a>
+              </div>
+            </div>
+
+            <div class="card" style="background:rgba(255,255,255,.04);box-shadow:none">
+              <h3 style="margin:0 0 6px">Quick Info</h3>
+              <div class="muted" style="display:grid;gap:8px;font-weight:900">
+                <div style="display:flex;justify-content:space-between;gap:12px"><span>Phone/Text</span><span style="color:var(--text)">(480) 669-5555</span></div>
+                <div style="display:flex;justify-content:space-between;gap:12px"><span>Hours</span><span style="color:var(--text)">Mon–Fri: 8AM–4PM</span></div>
+                <div style="display:flex;justify-content:space-between;gap:12px"><span>Service Area</span><span style="color:var(--text)">Copperas Cove, TX</span></div>
+              </div>
+              <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:12px">
+                <a class="btn" id="btnTextTop" href="#">Text Us</a>
+                <a class="btn ghost" id="btnDirections2" href="#" target="_blank" rel="noopener">Map</a>
+              </div>
+              <p class="muted" style="margin:12px 0 0;font-size:12.5px;font-weight:850">
+                Home-based shop — address shared after scheduling.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ESTIMATOR -->
+  <section id="estimator">
+    <div class="container">
+      <div class="sectionTitle">
+        <h2>Quick Price Estimator</h2>
+        <p>Pick your car + service to see a rough range.</p>
+      </div>
+
+      <div class="estWrap">
+        <div id="luxAlert" class="alert hide">
+          Heads up: We’re not accepting high-end/European luxury vehicles at this time.
+          If you think your car should be an exception, call/text and we’ll talk.
+        </div>
+
+        <div class="estGrid">
+          <div class="card" style="background:rgba(255,255,255,.03);box-shadow:none">
+            <h3 style="margin:0 0 8px">Vehicle + Service</h3>
+
+            <div class="row2">
+              <div>
+                <label for="make">Make</label>
+                <select id="make"></select>
+              </div>
+              <div>
+                <label for="model">Model</label>
+                <input id="model" list="modelList" placeholder="Start typing..." />
+                <datalist id="modelList"></datalist>
+              </div>
+            </div>
+
+            <div class="row2">
+              <div>
+                <label for="vehicleClass">Vehicle Type</label>
+                <select id="vehicleClass">
+                  <option value="car">Car / Small SUV</option>
+                  <option value="suv">SUV / Crossover</option>
+                  <option value="truck">Truck</option>
+                </select>
+              </div>
+              <div>
+                <label for="svc">Service Type</label>
+                <select id="svc">
+                  <option value="oil">Oil Change</option>
+                  <option value="rotation">Tire Rotation</option>
+                  <option value="battery">Battery Install</option>
+                  <option value="brakes">Brakes (Pads/Rotors)</option>
+                  <option value="diag">Check Engine Diagnostics</option>
+                  <option value="ac">A/C Recharge (Basic)</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Service options -->
+            <div id="svcOptions" style="margin-top:10px"></div>
+
+            <div class="checks">
+              <div class="checkLine">
+                <input type="checkbox" id="custParts">
+                <label for="custParts" style="margin:0;font-weight:1000">Customer-supplied parts (no warranty)</label>
+              </div>
+              <div class="checkLine">
+                <input type="checkbox" id="sameDay">
+                <label for="sameDay" style="margin:0;font-weight:1000">Same-day priority (when available)</label>
+              </div>
+            </div>
+
+            <p class="muted" style="margin:10px 0 0;font-size:13px;font-weight:850">
+              This is a <b>rough estimate</b>. Exact pricing is confirmed after we verify vehicle + parts needed.
+            </p>
+          </div>
+
+          <div class="estResult">
+            <div class="muted" style="font-weight:1100">Estimated Range</div>
+            <div class="estBig" id="estRange">$—</div>
+            <p class="estSmall" id="estNote">Choose options to see a range.</p>
+
+            <div class="estBtns">
+              <a class="btn primary" id="btnExactQuote" href="tel:+14806695555">Call/Text for Exact Quote</a>
+              <a class="btn green" id="btnJumpContact" href="#contact">Send Quote Request</a>
+            </div>
+
+            <hr style="border:none;border-top:1px solid rgba(255,255,255,.10);margin:14px 0">
+            <p class="estSmall">
+              Diagnostics reminder: <b>$129</b> up to 1 hour + <b>$50 credit</b> if approved same day.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRACKER -->
+  <section id="tracker">
+    <div class="container">
+      <div class="sectionTitle">
+        <h2>Customer Job Tracker</h2>
+        <p>Enter your ticket number to see the current status.</p>
+      </div>
+
+      <div class="trackerWrap">
+        <div class="trackerGrid">
+          <div class="card" style="background:rgba(255,255,255,.03);box-shadow:none">
+            <h3 style="margin:0 0 8px">Track My Car</h3>
+
+            <label for="ticket">Ticket #</label>
+            <input id="ticket" placeholder="Example: DPS-1027" />
+
+            <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:10px">
+              <button class="btn green" id="btnTrack" type="button">Check Status</button>
+              <button class="btn" id="btnDemoTicket" type="button">Use Demo Ticket</button>
+            </div>
+
+            <p class="muted" style="margin-top:10px;font-size:13px;font-weight:850">
+              You’ll get your ticket number when the job is created.
+            </p>
+
+            <div id="adminPanel" class="hide" style="margin-top:14px">
+              <hr style="border:none;border-top:1px solid rgba(255,255,255,.10);margin:14px 0">
+              <h3 style="margin:0 0 8px">Admin Update (demo)</h3>
+              <p class="muted" style="margin:0 0 10px;font-size:13px;font-weight:850">
+                Open this page with <b>?admin=1</b> to see this panel.
+                This is client-side (not secure). For real tracking, you’d want a backend.
+              </p>
+
+              <label for="adminTicket">Ticket #</label>
+              <input id="adminTicket" placeholder="DPS-1027" />
+
+              <label for="adminStatus">Set Status</label>
+              <select id="adminStatus">
+                <option value="waiting">Waiting</option>
+                <option value="in_progress">In Progress</option>
+                <option value="ready">Ready for Pick Up</option>
+              </select>
+
+              <label for="adminNote">Optional Note</label>
+              <input id="adminNote" placeholder="Example: Waiting on parts / Test drive complete" />
+
+              <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:10px">
+                <button class="btn primary" id="btnAdminUpdate" type="button">Update Ticket</button>
+                <button class="btn" id="btnAdminSeed" type="button">Seed Demo Ticket</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="card" style="background:rgba(255,255,255,.03);box-shadow:none">
+            <h3 style="margin:0 0 8px">Status</h3>
+            <div id="trackSummary" class="muted" style="font-weight:950">
+              Enter a ticket number to view your status.
+            </div>
+
+            <div class="steps" id="steps">
+              <div class="step" data-step="waiting">
+                <div class="stepTop"><h4>Waiting</h4><span class="dot"></span></div>
+                <p>Checked in / queued / waiting on parts.</p>
+              </div>
+              <div class="step" data-step="in_progress">
+                <div class="stepTop"><h4>In Progress</h4><span class="dot"></span></div>
+                <p>Work is being performed now.</p>
+              </div>
+              <div class="step" data-step="ready">
+                <div class="stepTop"><h4>Ready</h4><span class="dot"></span></div>
+                <p>Complete and ready for pick up.</p>
+              </div>
+            </div>
+
+            <p class="muted" id="trackNote" style="margin-top:12px;font-size:13px;font-weight:850"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="container">
+      <div class="sectionTitle">
+        <h2>FAQ</h2>
+        <p>Quick answers — no confusion.</p>
+      </div>
+
+      <div class="grid3">
+        <div class="faqItem">
+          <div class="faqQ"><span>Do you show upfront pricing?</span><span class="chev">▾</span></div>
+          <div class="faqA">Yes. You’ll get an estimate and we get approval before any work begins.</div>
+        </div>
+
+        <div class="faqItem">
+          <div class="faqQ"><span>Do you warranty the work?</span><span class="chev">▾</span></div>
+          <div class="faqA">Yes — <b>12 months / 12,000 miles</b> on shop-supplied parts & labor. Customer-supplied parts have no warranty.</div>
+        </div>
+
+        <div class="faqItem">
+          <div class="faqQ"><span>Where are you located?</span><span class="chev">▾</span></div>
+          <div class="faqA">We’re home-based in Copperas Cove. Once scheduled, you’ll receive the exact address.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="container">
+      <div class="sectionTitle">
+        <h2>Contact</h2>
+        <p>Fast reply. Clear quote. No runaround.</p>
+      </div>
+
+      <div class="grid3" style="grid-template-columns: 1fr 1fr; align-items:start">
+        <div class="card">
+          <h3>Call/Text</h3>
+          <p class="muted" style="margin:0 0 12px;font-weight:900">Best for scheduling.</p>
+          <div style="display:flex;gap:10px;flex-wrap:wrap">
+            <a class="btn primary" href="tel:+14806695555">Call Now</a>
+            <a class="btn" id="btnText" href="#">Text Us</a>
+          </div>
+
+          <hr style="border:none;border-top:1px solid var(--border);margin:16px 0">
+
+          <h3>Service Area</h3>
+          <p style="margin:0;color:var(--muted);font-weight:900">
+            Copperas Cove, TX (home-based — address shared after scheduling)
+          </p>
+
+          <div style="margin-top:12px;display:flex;gap:10px;flex-wrap:wrap">
+            <a class="btn ghost" id="btnMapBottom" href="#" target="_blank" rel="noopener">Service Area Map</a>
+          </div>
+
+          <p class="muted" style="margin-top:12px;font-size:13px;font-weight:900">
+            Email: <b style="color:var(--text)">deemikeybeaux93@gmail.com</b>
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Request a Quote</h3>
+          <p class="muted" style="margin-top:0;font-size:13px;font-weight:900">
+            This opens your email app with the details filled in.
+          </p>
+
+          <form id="quoteForm">
+            <label for="name">Name</label>
+            <input id="name" name="name" placeholder="Your name" required>
+
+            <label for="phone">Phone</label>
+            <input id="phone" name="phone" placeholder="(xxx) xxx-xxxx" required>
+
+            <label>Vehicle</label>
+            <div class="row2">
+              <input id="qMake" placeholder="Make" required>
+              <input id="qModel" placeholder="Model" required>
+            </div>
+
+            <label for="issue">What’s going on?</label>
+            <textarea id="issue" name="issue" placeholder="Describe symptoms, lights, noises, etc." required></textarea>
+
+            <div style="margin-top:12px;display:flex;gap:10px;flex-wrap:wrap">
+              <button class="btn primary" id="btnQuoteSubmit" type="submit">Send Request</button>
+              <button class="btn" type="button" id="btnClear">Clear</button>
+            </div>
+          </form>
+
+          <p class="muted" style="margin-top:10px;font-size:13px;font-weight:900">
+            Pro tip: Include the VIN (if handy) for faster parts quoting.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="footer">
+    <div class="container">
+      <div style="display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap">
+        <div>© <span id="year"></span> Dee’s Pit Stop Auto Care</div>
+        <div>deespitstop.com • Copperas Cove, TX</div>
+      </div>
+      <div style="margin-top:10px">
+        <span class="muted" style="font-weight:900">Mon–Fri: 8AM–4PM • Call/Text: (480) 669-5555</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile sticky CTA -->
+  <div class="stickyBar" role="navigation" aria-label="Quick actions">
+    <div class="stickyInner">
+      <a class="btn primary" href="tel:+14806695555">Call/Text</a>
+      <a class="btn green" href="#tracker">Tracker</a>
+    </div>
+  </div>
+  <div class="spacerBottom" aria-hidden="true"></div>
+
+  <script>
+    const BUSINESS = {
+      phone: "4806695555",
+      email: "deemikeybeaux93@gmail.com",
+      cityQuery: "Copperas Cove, TX"
+    };
+
+    // ===== High-end / luxury makes to exclude =====
+    const EXCLUDED_MAKES = new Set([
+      "Acura", "Alfa Romeo", "Audi", "Bentley", "BMW", "Bugatti", "Cadillac",
+      "Ferrari", "Genesis", "Jaguar", "Land Rover", "Lexus", "Lucid",
+      "Maserati", "Maybach", "McLaren", "Mercedes-Benz", "Mini", "Porsche",
+      "Rolls-Royce", "Tesla", "Volvo"
+    ]);
+
+    // ===== Make -> Models (short list; you can expand anytime) =====
+    const MAKE_MODELS = {
+      "Chevrolet": ["Silverado","Malibu","Equinox","Tahoe","Suburban","Impala","Traverse","Colorado","Cruze","Camaro"],
+      "Ford": ["F-150","F-250","F-350","Escape","Explorer","Edge","Ranger","Fusion","Focus","Mustang"],
+      "Toyota": ["Camry","Corolla","RAV4","Highlander","Tacoma","Tundra","Prius","4Runner","Sienna","Avalon"],
+      "Honda": ["Civic","Accord","CR-V","Pilot","Odyssey","Fit","HR-V","Ridgeline"],
+      "Nissan": ["Altima","Sentra","Maxima","Rogue","Murano","Pathfinder","Frontier","Titan"],
+      "Hyundai": ["Elantra","Sonata","Tucson","Santa Fe","Palisade","Accent","Kona"],
+      "Kia": ["Forte","Optima","K5","Soul","Sportage","Sorento","Telluride","Rio"],
+      "Jeep": ["Wrangler","Grand Cherokee","Cherokee","Compass","Renegade","Gladiator"],
+      "Dodge": ["Charger","Challenger","Durango","Journey","Grand Caravan"],
+      "Chrysler": ["300","Pacifica","Town & Country"],
+      "GMC": ["Sierra","Terrain","Acadia","Yukon","Canyon"],
+      "Ram": ["1500","2500","3500","ProMaster"],
+      "Subaru": ["Outback","Forester","Crosstrek","Impreza","Legacy","Ascent"],
+      "Mazda": ["Mazda3","Mazda6","CX-5","CX-9","CX-30","MX-5 Miata"],
+      "Volkswagen": ["Jetta","Passat","Tiguan","Atlas","Golf"],
+      "Mitsubishi": ["Outlander","Eclipse Cross","Mirage"],
+      "Suzuki": ["Grand Vitara","SX4"],
+      "Buick": ["Encore","Envision","Enclave","LaCrosse"],
+      "Pontiac": ["G6","Grand Prix","Vibe"],
+      "Saturn": ["Ion","Vue"],
+      "Scion": ["tC","xB","xD"],
+      "Infiniti": ["G37","Q50","QX60"],  // (you can add to excluded if you want)
+    };
+
+    const MAKE_LIST = [
+      "Chevrolet","Ford","Toyota","Honda","Nissan","Hyundai","Kia","Jeep","Dodge","Chrysler","GMC","Ram",
+      "Subaru","Mazda","Volkswagen","Mitsubishi","Suzuki","Buick","Pontiac","Saturn","Scion",
+      "Acura","Alfa Romeo","Audi","BMW","Cadillac","Genesis","Infiniti","Jaguar","Land Rover","Lexus",
+      "Mercedes-Benz","Mini","Porsche","Tesla","Volvo"
+    ];
+
+    // ===== Estimator ranges =====
+    // (You can adjust these to match your actual shop pricing policies.)
+    const ESTIMATOR_RANGES = {
+      oil: {
+        label: "Oil Change",
+        base: { car:[69,129], suv:[79,149], truck:[89,169] }
+      },
+      rotation: {
+        label: "Tire Rotation",
+        base: { car:[25,45], suv:[25,55], truck:[35,65] }
+      },
+      battery: {
+        label: "Battery Install",
+        base: { car:[29,79], suv:[39,99], truck:[49,119] }
+      },
+      brakes: {
+        label: "Brakes (Pads/Rotors)",
+        base: { car:[399,699], suv:[449,799], truck:[499,899] }
+      },
+      diag: {
+        label: "Check Engine Diagnostics",
+        base: { car:[129,129], suv:[129,129], truck:[129,129] }
+      },
+      ac: {
+        label: "A/C Recharge (Basic)",
+        base: { car:[149,249], suv:[169,279], truck:[189,309] }
+      }
+    };
+
+    // ===== Helpers =====
+    const $ = (id) => document.getElementById(id);
+    const money = (n) => `$${Math.round(n)}`;
+    const qs = (k) => new URLSearchParams(location.search).get(k);
+
+    function setDisabledAll(disabled){
+      ["svc","vehicleClass","custParts","sameDay","model","btnQuoteSubmit","name","phone","issue","qMake","qModel"].forEach(id=>{
+        const el = $(id);
+        if (el) el.disabled = disabled;
+      });
+      // Estimator CTA buttons:
+      $("btnExactQuote").classList.toggle("disabled", disabled);
+      $("btnJumpContact").classList.toggle("disabled", disabled);
+      if (disabled){
+        $("btnJumpContact").setAttribute("aria-disabled","true");
+        $("btnJumpContact").addEventListener("click", blockClick, { once:false });
+      } else {
+        $("btnJumpContact").removeEventListener("click", blockClick);
+      }
+    }
+    function blockClick(e){ e.preventDefault(); }
+
+    // ===== Map/text links =====
+    $("year").textContent = new Date().getFullYear();
+    const directionsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(BUSINESS.cityQuery)}`;
+    for (const id of ["btnDirections","btnDirections2","btnMapBottom"]) {
+      const el = $(id);
+      if (el) el.href = directionsUrl;
+    }
+    for (const id of ["btnText","btnTextTop"]) {
+      const el = $(id);
+      if (el) el.href = `sms:${BUSINESS.phone}`;
+    }
+
+    // ===== Tachometer =====
+    const needle = $("needle");
+    const rpmText = $("rpmText");
+    function rpmToAngle(rpm){
+      const clamped = Math.max(0, Math.min(8000, rpm));
+      return -120 + (clamped / 8000) * 240;
+    }
+    function setRpm(rpm){
+      needle.style.transform = `rotate(${rpmToAngle(rpm)}deg)`;
+      rpmText.textContent = `RPM: ${Math.round(rpm)}`;
+    }
+    let idle = 900;
+    setRpm(idle);
+    setInterval(() => {
+      const wobble = (Math.random()*160)-80;
+      setRpm(Math.max(750, idle + wobble));
+    }, 1300);
+    $("btnRev").addEventListener("click", () => {
+      const peak = 4200 + Math.random() * 2600;
+      setRpm(peak);
+      setTimeout(() => setRpm(2500 + Math.random()*700), 450);
+      setTimeout(() => setRpm(1400 + Math.random()*300), 900);
+      setTimeout(() => setRpm(idle + (Math.random()*120-60)), 1400);
+    });
+
+    // ===== Make/model dropdown + high-end exclusion =====
+    const makeEl = $("make");
+    const modelEl = $("model");
+    const modelListEl = $("modelList");
+    const luxAlert = $("luxAlert");
+
+    function renderMakeOptions(){
+      makeEl.innerHTML = MAKE_LIST.map(m => `<option value="${m}">${m}</option>`).join("");
+    }
+    function renderModelList(make){
+      const models = MAKE_MODELS[make] || [];
+      modelListEl.innerHTML = models.map(x => `<option value="${x}"></option>`).join("");
+      // If the user previously typed a model, keep it. Otherwise clear.
+      if (!models.includes(modelEl.value)) {
+        // keep typed value; don’t wipe aggressively
+      }
+    }
+    function applyLuxRule(make){
+      const excluded = EXCLUDED_MAKES.has(make);
+      luxAlert.classList.toggle("hide", !excluded);
+
+      setDisabledAll(excluded);
+
+      if (excluded){
+        // also push make/model into quote box for visibility
+        $("qMake").value = make;
+        $("qModel").value = modelEl.value || "";
+        $("estRange").textContent = "$—";
+        $("estNote").textContent = "This make is currently not accepted.";
+      } else {
+        computeEstimate();
+      }
+      return excluded;
+    }
+
+    renderMakeOptions();
+    renderModelList(makeEl.value);
+    applyLuxRule(makeEl.value);
+
+    makeEl.addEventListener("change", () => {
+      renderModelList(makeEl.value);
+      // Autofill contact form make/model
+      $("qMake").value = makeEl.value;
+      $("qModel").value = modelEl.value || "";
+      applyLuxRule(makeEl.value);
+      computeEstimate();
+    });
+    modelEl.addEventListener("input", () => {
+      $("qMake").value = makeEl.value;
+      $("qModel").value = modelEl.value;
+    });
+
+    // ===== Estimator options (Oil type, Brake axle, AC refrigerant, etc.) =====
+    const svcEl = $("svc");
+    const vehEl = $("vehicleClass");
+    const custPartsEl = $("custParts");
+    const sameDayEl = $("sameDay");
+
+    const estRangeEl = $("estRange");
+    const estNoteEl = $("estNote");
+    const svcOptionsEl = $("svcOptions");
+
+    function renderSvcOptions(svc){
+      // Clear and then render relevant option controls
+      let html = "";
+
+      if (svc === "oil"){
+        html = `
+          <label>Oil Type</label>
+          <div class="radioRow">
+            <label class="radioPill"><input type="radio" name="oilType" value="conv" checked> Conventional</label>
+            <label class="radioPill"><input type="radio" name="oilType" value="syn"> Full Synthetic</label>
+          </div>
+        `;
+      } else if (svc === "brakes"){
+        html = `
+          <label>Which Brakes?</label>
+          <div class="radioRow">
+            <label class="radioPill"><input type="radio" name="brakeAxle" value="front" checked> Front</label>
+            <label class="radioPill"><input type="radio" name="brakeAxle" value="rear"> Rear</label>
+            <label class="radioPill"><input type="radio" name="brakeAxle" value="both"> Both</label>
+          </div>
+        `;
+      } else if (svc === "ac"){
+        html = `
+          <label>Refrigerant Type</label>
+          <div class="radioRow">
+            <label class="radioPill"><input type="radio" name="refrig" value="r134a" checked> R-134a</label>
+            <label class="radioPill"><input type="radio" name="refrig" value="yf"> 1234yf</label>
+          </div>
+        `;
+      } else {
+        html = "";
+      }
+
+      svcOptionsEl.innerHTML = html;
+
+      // Hook option changes
+      svcOptionsEl.querySelectorAll("input").forEach(i => i.addEventListener("change", computeEstimate));
+    }
+
+    function getRadioValue(name, fallback){
+      const el = document.querySelector(`input[name="${name}"]:checked`);
+      return el ? el.value : fallback;
+    }
+
+    function computeEstimate(){
+      // If excluded make, don’t compute
+      if (EXCLUDED_MAKES.has(makeEl.value)) return;
+
+      const svc = svcEl.value;
+      const v = vehEl.value;
+
+      const cfg = ESTIMATOR_RANGES[svc];
+      let [lo, hi] = cfg.base[v];
+
+      // Service-specific modifiers
+      if (svc === "oil"){
+        const oilType = getRadioValue("oilType","conv");
+        if (oilType === "syn"){
+          lo += 30; hi += 50;
+          estNoteEl.textContent = "Full synthetic selected. Exact price depends on capacity + filter.";
+        } else {
+          estNoteEl.textContent = "Conventional selected. Exact price depends on capacity + filter.";
+        }
+      } else if (svc === "brakes"){
+        const axle = getRadioValue("brakeAxle","front");
+        if (axle === "rear"){
+          lo = lo - 20; hi = hi - 10;
+        } else if (axle === "both"){
+          lo = lo * 1.75; hi = hi * 1.85;
+        }
+        estNoteEl.textContent = "Brake range varies by axle/rotor type. Some vehicles cost more.";
+      } else if (svc === "ac"){
+        const ref = getRadioValue("refrig","r134a");
+        if (ref === "yf"){
+          lo += 60; hi += 120;
+          estNoteEl.textContent = "1234yf selected (typically higher cost). Leak repair not included.";
+        } else {
+          estNoteEl.textContent = "R-134a selected. Leak repair not included.";
+        }
+      } else if (svc === "diag"){
+        lo = 129; hi = 129;
+        estNoteEl.textContent = "Dash Light Deal: $129 up to 1 hour + $50 credit if approved same day.";
+      } else if (svc === "rotation"){
+        estNoteEl.textContent = "Rotation estimate. Some vehicles require special lug keys.";
+      } else if (svc === "battery"){
+        estNoteEl.textContent = "Install labor estimate only. Battery cost varies by vehicle.";
+      }
+
+      // Customer-supplied parts rule
+      if (custPartsEl.checked){
+        if (svc === "brakes"){
+          lo = 250; hi = 450;
+          estNoteEl.textContent = "Customer parts: labor/time estimate shown. No warranty on customer-supplied parts.";
+        } else if (svc === "battery"){
+          lo = 49; hi = 129;
+          estNoteEl.textContent = "Customer parts: install-only range. No warranty on customer-supplied parts.";
+        } else {
+          hi += 20;
+          estNoteEl.textContent += " Customer parts selected (no warranty).";
+        }
+      }
+
+      // Same-day priority bump
+      if (sameDayEl.checked){
+        hi += 25;
+        estNoteEl.textContent += " Same-day priority requested (when available).";
+      }
+
+      estRangeEl.textContent = (lo === hi) ? `${money(lo)}` : `${money(lo)} – ${money(hi)}`;
+
+      // Keep contact form synced
+      $("qMake").value = makeEl.value;
+      $("qModel").value = modelEl.value || "";
+    }
+
+    renderSvcOptions(svcEl.value);
+    computeEstimate();
+
+    [svcEl, vehEl, custPartsEl, sameDayEl].forEach(el => el.addEventListener("change", () => {
+      renderSvcOptions(svcEl.value);
+      computeEstimate();
+    }));
+
+    // ===== Tracker logic (localStorage) =====
+    // Ticket record: { status: 'waiting'|'in_progress'|'ready', note: string, updatedAt: number }
+    function ticketKey(ticket){ return `dps_ticket_${ticket.trim().toUpperCase()}`; }
+
+    function setTrackerUI(status){
+      document.querySelectorAll(".step").forEach(s => {
+        s.classList.toggle("active", s.dataset.step === status);
+      });
+    }
+    function prettyStatus(s){
+      if (s === "waiting") return "Waiting";
+      if (s === "in_progress") return "In Progress";
+      if (s === "ready") return "Ready for Pick Up";
+      return "Unknown";
+    }
+    function loadTicket(ticket){
+      const raw = localStorage.getItem(ticketKey(ticket));
+      return raw ? JSON.parse(raw) : null;
+    }
+    function saveTicket(ticket, record){
+      localStorage.setItem(ticketKey(ticket), JSON.stringify(record));
+    }
+
+    function track(ticket){
+      const t = ticket.trim().toUpperCase();
+      if (!t){
+        $("trackSummary").textContent = "Enter a ticket number to view your status.";
+        $("trackNote").textContent = "";
+        setTrackerUI("waiting"); // default visual
+        document.querySelectorAll(".step").forEach(s => s.classList.remove("active"));
+        return;
+      }
+      const rec = loadTicket(t);
+      if (!rec){
+        $("trackSummary").textContent = `Ticket ${t}: Not found yet. If you just dropped off, it may not be entered—call/text to confirm.`;
+        $("trackNote").textContent = "";
+        document.querySelectorAll(".step").forEach(s => s.classList.remove("active"));
+        return;
+      }
+
+      $("trackSummary").textContent = `Ticket ${t}: ${prettyStatus(rec.status)}`;
+      $("trackNote").textContent = rec.note ? `Note: ${rec.note}` : "";
+      setTrackerUI(rec.status);
+    }
+
+    $("btnTrack").addEventListener("click", () => track($("ticket").value));
+    $("btnDemoTicket").addEventListener("click", () => {
+      $("ticket").value = "DPS-1027";
+      track("DPS-1027");
+    });
+
+    // Admin panel (demo)
+    const adminOn = qs("admin") === "1";
+    $("adminPanel").classList.toggle("hide", !adminOn);
+
+    $("btnAdminUpdate")?.addEventListener("click", () => {
+      const t = $("adminTicket").value.trim().toUpperCase();
+      if (!t) return alert("Enter a ticket number.");
+      const status = $("adminStatus").value;
+      const note = $("adminNote").value.trim();
+
+      saveTicket(t, { status, note, updatedAt: Date.now() });
+      alert(`Updated ${t} to ${prettyStatus(status)}.`);
+      // If user is tracking same ticket, refresh UI
+      if ($("ticket").value.trim().toUpperCase() === t) track(t);
+    });
+
+    $("btnAdminSeed")?.addEventListener("click", () => {
+      saveTicket("DPS-1027", { status:"waiting", note:"Checked in. Waiting on parts confirmation.", updatedAt: Date.now() });
+      saveTicket("DPS-2041", { status:"in_progress", note:"Brake job in progress.", updatedAt: Date.now() });
+      saveTicket("DPS-3308", { status:"ready", note:"All set. Ready for pick up.", updatedAt: Date.now() });
+      alert("Seeded demo tickets: DPS-1027, DPS-2041, DPS-3308");
+    });
+
+    // ===== Quote form mailto (blocked for excluded makes) =====
+    const form = $("quoteForm");
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      const make = $("qMake").value.trim();
+      const model = $("qModel").value.trim();
+
+      if (EXCLUDED_MAKES.has(makeEl.value) || EXCLUDED_MAKES.has(make)){
+        alert("This make is currently not accepted. Call/text if you believe it should be an exception.");
+        return;
+      }
+
+      const name = $("name").value.trim();
+      const phone = $("phone").value.trim();
+      const issue = $("issue").value.trim();
+
+      const svcLabel = ESTIMATOR_RANGES[svcEl.value]?.label || svcEl.value;
+      const subject = encodeURIComponent(`Quote Request - ${make} ${model}`);
+      const body = encodeURIComponent(
+`Name: ${name}
+Phone: ${phone}
+Vehicle: ${make} ${model}
+
+Issue:
+${issue}
+
+Estimator selection:
+- Service: ${svcLabel}
+- Vehicle type: ${vehEl.options[vehEl.selectedIndex].text}
+- Customer parts: ${custPartsEl.checked ? "Yes" : "No"}
+- Same-day priority: ${sameDayEl.checked ? "Yes" : "No"}
+
+(If available) VIN:
+Preferred date/time:
+`
+      );
+
+      window.location.href = `mailto:${BUSINESS.email}?subject=${subject}&body=${body}`;
+    });
+
+    $("btnClear").addEventListener("click", () => form.reset());
+
+    // Keep contact make/model synced from estimator
+    $("qMake").value = makeEl.value;
+    $("qModel").value = modelEl.value || "";
+
+    // Initial luxury enforcement
+    applyLuxRule(makeEl.value);
+
+    // Also update estimate on model typing (doesn't affect math but keeps quote synced)
+    modelEl.addEventListener("input", computeEstimate);
+
+    // FAQ accordion
+    document.querySelectorAll(".faqItem").forEach(item => {
+      item.addEventListener("click", () => {
+        const isOpen = item.classList.contains("open");
+        document.querySelectorAll(".faqItem.open").forEach(x => x.classList.remove("open"));
+        if (!isOpen) item.classList.add("open");
+      });
+    });
+  </script>
+</body>
+</html>
